@@ -51,7 +51,7 @@
     <button type="submit">Login</button>
   </form>
 
-  <%-- Retrieve the email parameter from the form --%>
+  <%-- Retrieve the email parameter from the form  --%>
   <% String email = request.getParameter("email"); %>
   <%-- Check if the email is a Gmail address --%>
   <% if ((email != null) && (email.endsWith("@gmail.com") || email.endsWith("@gmail.co.il"))) { %>

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -45,23 +44,25 @@ pageEncoding="UTF-8" %>
     </style>
   </head>
   <body>
-    <h1>Login</h1>
-    <form action="index.jsp" method="post">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
-      <button type="submit">Login</button>
-    </form>
+  <h1>Login</h1>
+  <form action="index.jsp" method="post">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+    <button type="submit">Login</button>
+  </form>
 
-    <%-- Retrieve the email parameter from the form --%> <% String email =
-    request.getParameter("email"); %> <%-- Check if the email is a Gmail address
-    --%> <% if (email != null && (email.endsWith("@gmail.com")) ||
-    email.endsWith("@gmail.co.il")) { %> <%-- Redirect to Google --%> <%
-    response.setStatus(302); %> <% response.setHeader("Location",
-    "https://www.google.com"); %> <% } else if (email != null) { %> <%-- Display
-    an error message --%>
+  <%-- Retrieve the email parameter from the form --%>
+  <% String email = request.getParameter("email"); %>
+  <%-- Check if the email is a Gmail address --%>
+  <% if ((email != null) && (email.endsWith("@gmail.com") || email.endsWith("@gmail.co.il"))) { %>
+    <%-- Redirect to Google --%>
+    <% response.setStatus(302); %>
+    <% response.setHeader("Location", "https://www.google.com"); %>
+  <% } else if (email != null) { %>
+    <%-- Display an error message --%>
     <p class="error-message">
       Invalid email address! Please enter a Gmail address.
     </p>
-    <% } %>
+  <% } %>
   </body>
 </html>

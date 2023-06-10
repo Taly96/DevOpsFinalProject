@@ -49,6 +49,7 @@
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required />
     <button type="submit">Login</button>
+    <button onclick="window.location.href='https://advantageonlineshopping.com/#/'">Visit Website</button>
   </form>
 
   <%-- Retrieve the email parameter from the form  --%>
